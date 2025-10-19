@@ -246,6 +246,110 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
+            Тарифы и цены
+          </h2>
+          <p className="text-xl text-center text-muted-foreground mb-16 max-w-3xl mx-auto">
+            Выберите подходящий формат обучения
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                name: "Базовый",
+                price: "15 000",
+                period: "/ месяц",
+                description: "Идеально для начинающих",
+                features: [
+                  "8 групповых занятий",
+                  "Доступ к материалам",
+                  "Домашние задания",
+                  "Чат поддержки"
+                ],
+                color: "from-primary to-purple-500",
+                popular: false
+              },
+              {
+                name: "Премиум",
+                price: "35 000",
+                period: "/ месяц",
+                description: "Самый популярный тариф",
+                features: [
+                  "8 групповых занятий",
+                  "4 индивидуальных урока",
+                  "Видеозаписи занятий",
+                  "Персональный разбор",
+                  "Сертификат"
+                ],
+                color: "from-secondary to-pink-500",
+                popular: true
+              },
+              {
+                name: "VIP",
+                price: "65 000",
+                period: "/ месяц",
+                description: "Максимальный результат",
+                features: [
+                  "12 индивидуальных уроков",
+                  "Личный куратор 24/7",
+                  "Разбор выступлений",
+                  "Доступ ко всем курсам",
+                  "Именной сертификат",
+                  "Бонусные мастер-классы"
+                ],
+                color: "from-accent to-orange-500",
+                popular: false
+              }
+            ].map((plan, idx) => (
+              <Card 
+                key={idx}
+                className={`relative overflow-hidden transition-all duration-300 ${
+                  plan.popular 
+                    ? 'border-4 border-secondary shadow-2xl scale-105 md:scale-110' 
+                    : 'hover:shadow-xl hover:-translate-y-2'
+                } animate-fade-in`}
+                style={{ animationDelay: `${idx * 150}ms` }}
+              >
+                {plan.popular && (
+                  <div className="absolute top-0 right-0 bg-gradient-to-r from-secondary to-pink-500 text-white px-6 py-2 text-sm font-bold rounded-bl-2xl">
+                    ПОПУЛЯРНЫЙ
+                  </div>
+                )}
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                  <p className="text-muted-foreground mb-6">{plan.description}</p>
+                  <div className="mb-6">
+                    <span className={`text-5xl font-bold bg-gradient-to-r ${plan.color} bg-clip-text text-transparent`}>
+                      {plan.price} ₽
+                    </span>
+                    <span className="text-muted-foreground ml-2">{plan.period}</span>
+                  </div>
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <Icon name="Check" size={20} className="text-green-500 flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    size="lg" 
+                    className={`w-full text-lg py-6 ${
+                      plan.popular 
+                        ? 'bg-gradient-to-r from-secondary to-pink-500 hover:opacity-90' 
+                        : `bg-gradient-to-r ${plan.color} hover:opacity-90`
+                    }`}
+                  >
+                    Выбрать тариф
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
