@@ -2,6 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
 
@@ -393,6 +399,74 @@ const Index = () => {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
+              Частые вопросы
+            </h2>
+            <p className="text-xl text-center text-muted-foreground mb-12">
+              Ответы на популярные вопросы о курсах
+            </p>
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="border-2 rounded-2xl px-6 hover:border-primary/50 transition-colors">
+                <AccordionTrigger className="text-lg font-semibold hover:no-underline">
+                  Нужна ли музыкальная подготовка для занятий?
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground leading-relaxed pt-2">
+                  Нет, музыкальная подготовка не требуется. Наши курсы разработаны для людей с любым уровнем подготовки. Мы начинаем с основ и постепенно развиваем ваши навыки.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="border-2 rounded-2xl px-6 hover:border-primary/50 transition-colors">
+                <AccordionTrigger className="text-lg font-semibold hover:no-underline">
+                  Как проходят занятия — онлайн или офлайн?
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground leading-relaxed pt-2">
+                  Мы предлагаем оба формата! Вы можете выбрать удобный для вас: онлайн-занятия в Zoom или очные встречи в нашей студии в центре города. Качество обучения одинаково высокое в обоих форматах.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="border-2 rounded-2xl px-6 hover:border-primary/50 transition-colors">
+                <AccordionTrigger className="text-lg font-semibold hover:no-underline">
+                  Сколько длится один курс?
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground leading-relaxed pt-2">
+                  Стандартный курс рассчитан на 1-3 месяца в зависимости от выбранной программы и интенсивности занятий. Базовый курс — 1 месяц, углубленные программы — 2-3 месяца.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="border-2 rounded-2xl px-6 hover:border-primary/50 transition-colors">
+                <AccordionTrigger className="text-lg font-semibold hover:no-underline">
+                  Можно ли заморозить абонемент?
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground leading-relaxed pt-2">
+                  Да, мы предусмотрели возможность заморозки абонемента на срок до 2 недель по уважительным причинам. Просто свяжитесь с вашим куратором заранее.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="border-2 rounded-2xl px-6 hover:border-primary/50 transition-colors">
+                <AccordionTrigger className="text-lg font-semibold hover:no-underline">
+                  Выдается ли сертификат после окончания курса?
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground leading-relaxed pt-2">
+                  Да! После успешного завершения курса вы получаете именной сертификат, подтверждающий прохождение обучения. Для тарифов Премиум и VIP сертификат выдается автоматически.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="border-2 rounded-2xl px-6 hover:border-primary/50 transition-colors">
+                <AccordionTrigger className="text-lg font-semibold hover:no-underline">
+                  Что делать, если я пропустил занятие?
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground leading-relaxed pt-2">
+                  Все занятия записываются и доступны в личном кабинете в течение 30 дней. Вы сможете просмотреть пропущенное занятие в любое удобное время. Для индивидуальных уроков возможен перенос при предварительном уведомлении.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
