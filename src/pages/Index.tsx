@@ -158,6 +158,94 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="order-2 md:order-1">
+              <img 
+                src="https://cdn.poehali.dev/projects/d3655fe6-9f81-4b8f-9007-4d19323cef07/files/3a5e24e7-8d84-407e-afe2-f8c14f69e848.jpg"
+                alt="Сценическая речь"
+                className="rounded-3xl shadow-2xl w-full animate-scale-in"
+              />
+            </div>
+            <div className="order-1 md:order-2 text-white">
+              <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold mb-4">
+                Новое направление
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Сценическая речь
+              </h2>
+              <p className="text-xl mb-8 text-white/90 leading-relaxed">
+                Овладейте искусством театральной выразительности и актерского мастерства
+              </p>
+              <div className="space-y-4">
+                {[
+                  { icon: "Drama", text: "Техники актёрской выразительности" },
+                  { icon: "Volume2", text: "Правильная артикуляция и дикция" },
+                  { icon: "Theater", text: "Работа с текстом и подтекстом" },
+                  { icon: "Sparkles", text: "Эмоциональная подача материала" }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-4 animate-fade-in" style={{ animationDelay: `${idx * 100}ms` }}>
+                    <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                      <Icon name={item.icon} size={24} />
+                    </div>
+                    <p className="text-lg">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+              <Button size="lg" className="mt-8 bg-white text-purple-600 hover:bg-white/90 text-lg px-8 py-6">
+                Узнать подробнее
+                <Icon name="ArrowRight" className="ml-2" size={20} />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-4">
+                Популярное направление
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Ораторское искусство
+              </h2>
+              <p className="text-xl mb-8 text-muted-foreground leading-relaxed">
+                Станьте мастером публичных выступлений и научитесь убеждать аудиторию
+              </p>
+              <div className="space-y-4">
+                {[
+                  { icon: "Users", text: "Уверенность перед любой аудиторией" },
+                  { icon: "Lightbulb", text: "Структура убедительной речи" },
+                  { icon: "Target", text: "Работа с возражениями" },
+                  { icon: "TrendingUp", text: "Влияние и харизма оратора" }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-4 animate-fade-in" style={{ animationDelay: `${idx * 100}ms` }}>
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-orange-500 flex items-center justify-center flex-shrink-0">
+                      <Icon name={item.icon} size={24} className="text-white" />
+                    </div>
+                    <p className="text-lg">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+              <Button size="lg" className="mt-8 bg-gradient-to-r from-accent to-orange-500 text-white text-lg px-8 py-6">
+                Записаться на курс
+                <Icon name="ArrowRight" className="ml-2" size={20} />
+              </Button>
+            </div>
+            <div>
+              <img 
+                src="https://cdn.poehali.dev/projects/d3655fe6-9f81-4b8f-9007-4d19323cef07/files/6f505e51-bff3-4ca2-ba3d-6fe9ee4f2b4f.jpg"
+                alt="Ораторское искусство"
+                className="rounded-3xl shadow-2xl w-full animate-scale-in"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
